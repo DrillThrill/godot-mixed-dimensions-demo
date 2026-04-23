@@ -1,75 +1,40 @@
 [gd_scene format=3 uid="uid://dmng8pmp0inva"]
 
+[ext_resource type="Script" uid="uid://5bw454quiiuu" path="res://level/character_body_2d.gd" id="1_5np0l"]
 [ext_resource type="Texture2D" uid="uid://bpbsxtwtecuj5" path="res://icon.svg" id="1_x36ny"]
 
-[sub_resource type="GDScript" id="GDScript_x36ny"]
-script/source = "extends Sprite2D
-
-var _time: float = 0.0
-@onready var _init_position: Vector2 = global_position
-
-func _process(delta: float) -> void:
-	_time += delta
-	global_position.x = _init_position.x + ( sin(_time * 2.0) * 500.0 )
-"
-
-[sub_resource type="Animation" id="Animation_pjk4i"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 100)]
-}
-
-[sub_resource type="Animation" id="Animation_5np0l"]
-resource_name = "loop"
-length = 4.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 100), Vector2(0, -100), Vector2(0, 100)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_a8b5g"]
-_data = {
-&"RESET": SubResource("Animation_pjk4i"),
-&"loop": SubResource("Animation_5np0l")
-}
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjk4i"]
+size = Vector2(242, 234)
 
 [node name="2DLevel" type="Node2D" unique_id=80928347]
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=1778959802]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2042817213]
+script = ExtResource("1_5np0l")
+
+[node name="Icon" type="Sprite2D" parent="CharacterBody2D" unique_id=1778959802]
 position = Vector2(-13, -3)
-scale = Vector2(2.0161555, 2.0161555)
+scale = Vector2(1.1286244, 1.1286244)
 texture = ExtResource("1_x36ny")
-script = SubResource("GDScript_x36ny")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=79798200 groups=["camera_2d"]]
-position = Vector2(0, 100)
-scale = Vector2(1.0000001, 1.0000001)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=770055982]
+position = Vector2(-10, 0)
+scale = Vector2(0.5597904, 0.5597904)
+shape = SubResource("RectangleShape2D_pjk4i")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D" unique_id=1567034097]
-libraries/ = SubResource("AnimationLibrary_a8b5g")
-autoplay = &"loop"
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=79798200 groups=["camera_2d"]]
+scale = Vector2(1.0000002, 1.0000002)
+zoom = Vector2(0.57, 0.57)
+position_smoothing_speed = 5.015
 
-[node name="Icon2" type="Sprite2D" parent="Camera2D" unique_id=555559985]
-modulate = Color(1, 1, 1, 0.6039216)
-z_index = -3
-position = Vector2(-2.0000267, 3.9999943)
-scale = Vector2(15.593747, 9.213578)
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=41381959]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1085041200]
+polygon = PackedVector2Array(-1125, -450, -1125, 600, -375, 150, -375, -225, 675, -225, 675, -600, -1125, -600)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1595968516]
+polygon = PackedVector2Array(450, -75, 450, 300, -75, 300, -75, 450, 150, 600, 825, 600, 825, -75)
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=502049814]
+position = Vector2(0, 150)
+scale = Vector2(4.183675, 0.7514396)
 texture = ExtResource("1_x36ny")

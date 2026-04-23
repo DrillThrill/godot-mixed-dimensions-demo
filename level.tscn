@@ -21,8 +21,55 @@ glow_enabled = true
 [sub_resource type="ViewportTexture" id="ViewportTexture_0b4ue"]
 viewport_path = NodePath("SubViewport")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0b4ue"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 1, 0.4, 0.8)
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_f2txt"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_1ainy"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_n6hdu"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_km5ld"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_i2t4f"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_8cye3"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_2orkt"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_aicyk"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_8b0r0"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_h6smj"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_v5j5c"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_5pxul"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_fedht"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_4c15r"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_ait7k"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_42xju"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_v7sqt"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_ilwjd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0b4ue"]
+font_size = 32
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
 [node name="3DLevel" type="Node3D" unique_id=122904715]
 script = ExtResource("1_0b4ue")
+BASE_CAMERA_Y = 9.39
 metadata/_custom_type_script = "uid://d3bsfeo3qandv"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2025988060]
@@ -40,8 +87,8 @@ render_target_update_mode = 4
 [node name="2DLevel" parent="SubViewport" unique_id=80928347 instance=ExtResource("1_u52ul")]
 
 [node name="Screen" type="Sprite3D" parent="." unique_id=848006215 groups=["screen"]]
-transform = Transform3D(1, 0, 0, 0, -0.44807357, 0.8939967, 0, -0.8939967, -0.44807357, 0, 0, 1.3333334)
-pixel_size = 0.014209759
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+pixel_size = 0.024259932
 texture = SubResource("ViewportTexture_0b4ue")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1121212817]
@@ -50,8 +97,134 @@ size = Vector3(123.56445, 1, 111.96973)
 material = ExtResource("2_vonw3")
 
 [node name="EnvironmentCamera3D" type="Camera3D" parent="." unique_id=819086424]
-transform = Transform3D(1, 0, 0, 0, -0.44807363, 0.89399666, 0, -0.89399666, -0.44807363, 0, 10, 1.3333334)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 12.667351, 0)
 current = true
+fov = 108.73606
 size = 0.15
 script = ExtResource("3_oi3di")
 metadata/_custom_type_script = "uid://balyou13xes2c"
+
+[node name="DebugCollisions" type="Node3D" parent="." unique_id=1664807053]
+
+[node name="@MeshInstance3D@23790" type="MeshInstance3D" parent="DebugCollisions" unique_id=489122128]
+material_override = SubResource("StandardMaterial3D_0b4ue")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_f2txt")
+
+[node name="@MeshInstance3D@23791" type="MeshInstance3D" parent="DebugCollisions" unique_id=1670354160]
+material_override = SubResource("StandardMaterial3D_0b4ue")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_1ainy")
+
+[node name="@MeshInstance3D@23792" type="MeshInstance3D" parent="DebugCollisions" unique_id=353994342]
+material_override = SubResource("StandardMaterial3D_0b4ue")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_n6hdu")
+
+[node name="@MeshInstance3D@23793" type="MeshInstance3D" parent="DebugCollisions" unique_id=230355000]
+material_override = SubResource("StandardMaterial3D_0b4ue")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_km5ld")
+
+[node name="@MeshInstance3D@23794" type="MeshInstance3D" parent="DebugCollisions" unique_id=507370837]
+material_override = SubResource("StandardMaterial3D_0b4ue")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_i2t4f")
+
+[node name="@MeshInstance3D@23795" type="MeshInstance3D" parent="DebugCollisions" unique_id=1375558727]
+material_override = SubResource("StandardMaterial3D_0b4ue")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_8cye3")
+
+[node name="@MeshInstance3D@23796" type="MeshInstance3D" parent="DebugCollisions" unique_id=658857183]
+material_override = SubResource("StandardMaterial3D_0b4ue")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_2orkt")
+
+[node name="@MeshInstance3D@23797" type="MeshInstance3D" parent="DebugCollisions" unique_id=1136368283]
+material_override = SubResource("StandardMaterial3D_0b4ue")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_aicyk")
+
+[node name="@MeshInstance3D@23798" type="MeshInstance3D" parent="DebugCollisions" unique_id=2044919980]
+material_override = SubResource("StandardMaterial3D_0b4ue")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_8b0r0")
+
+[node name="@MeshInstance3D@23799" type="MeshInstance3D" parent="DebugCollisions" unique_id=1017574261]
+material_override = SubResource("StandardMaterial3D_0b4ue")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_h6smj")
+
+[node name="@MeshInstance3D@23800" type="MeshInstance3D" parent="DebugCollisions" unique_id=495246827]
+material_override = SubResource("StandardMaterial3D_0b4ue")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_v5j5c")
+
+[node name="@MeshInstance3D@23801" type="MeshInstance3D" parent="DebugCollisions" unique_id=709430204]
+material_override = SubResource("StandardMaterial3D_0b4ue")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_5pxul")
+
+[node name="@MeshInstance3D@23802" type="MeshInstance3D" parent="DebugCollisions" unique_id=817688617]
+material_override = SubResource("StandardMaterial3D_0b4ue")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_fedht")
+
+[node name="@MeshInstance3D@23803" type="MeshInstance3D" parent="DebugCollisions" unique_id=1977341812]
+material_override = SubResource("StandardMaterial3D_0b4ue")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_4c15r")
+
+[node name="@MeshInstance3D@23804" type="MeshInstance3D" parent="DebugCollisions" unique_id=152432718]
+material_override = SubResource("StandardMaterial3D_0b4ue")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_ait7k")
+
+[node name="@MeshInstance3D@23805" type="MeshInstance3D" parent="DebugCollisions" unique_id=93605244]
+material_override = SubResource("StandardMaterial3D_0b4ue")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_42xju")
+
+[node name="@MeshInstance3D@23806" type="MeshInstance3D" parent="DebugCollisions" unique_id=2059757097]
+material_override = SubResource("StandardMaterial3D_0b4ue")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_v7sqt")
+
+[node name="@MeshInstance3D@23807" type="MeshInstance3D" parent="DebugCollisions" unique_id=250717504]
+material_override = SubResource("StandardMaterial3D_0b4ue")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_ilwjd")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=411256277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2.042328, -5.5)
+size = Vector3(24, 4.084656, 5)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1936780876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.2202759, -3)
+size = Vector3(10, 2.4405518, 10)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=410556892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0.12133789, 3.5)
+size = Vector3(5, 0.24267578, 9)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1560096406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 3.0629272, 6)
+size = Vector3(9, 6.1258545, 4)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=606076911]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1760551971]
+unique_name_in_owner = true
+offset_left = 15.0
+offset_top = 18.0
+offset_right = 608.0
+offset_bottom = 111.0
+text = "2D ZOOM: (0.55, 0.55)
+3D SPRITE POS: (0.0, 0.0, 0.0)
+ 2D CAM POS: (0.0, 0.0)"
+label_settings = SubResource("LabelSettings_0b4ue")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=418500060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.913214, 3.0661197, 0)
+radius = 2.1522825
