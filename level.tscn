@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://c30pp7kl41f8k"]
+
+[ext_resource type="PackedScene" uid="uid://dmng8pmp0inva" path="res://level/2d_level.tscn" id="1_u52ul"]
+[ext_resource type="Material" uid="uid://cb4fidmlfwh4u" path="res://level/ground-material.tres" id="2_vonw3"]
+[ext_resource type="Script" uid="uid://balyou13xes2c" path="res://classes/Environment3DCamera.gd" id="3_oi3di"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u52ul"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_vonw3"]
+sky_material = SubResource("ProceduralSkyMaterial_u52ul")
+
+[sub_resource type="Environment" id="Environment_oi3di"]
+background_mode = 2
+sky = SubResource("Sky_vonw3")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_u52ul"]
+viewport_path = NodePath("SubViewport")
+
+[node name="3DLevel" type="Node3D" unique_id=688219878]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2025988060]
+environment = SubResource("Environment_oi3di")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1208393298]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=90686839]
+transparent_bg = true
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="2DLevel" parent="SubViewport" unique_id=80928347 instance=ExtResource("1_u52ul")]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=848006215]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+texture = SubResource("ViewportTexture_u52ul")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1121212817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)
+size = Vector3(123.56445, 1, 111.96973)
+material = ExtResource("2_vonw3")
+
+[node name="EnvironmentCamera3D" type="Camera3D" parent="." unique_id=819086424]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.34974098, 3.4623308, -0.015739918)
+projection = 2
+current = true
+size = 0.15
+script = ExtResource("3_oi3di")
+metadata/_custom_type_script = "uid://balyou13xes2c"
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=178954166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4545784, 2.86691, 0)

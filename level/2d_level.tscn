@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dmng8pmp0inva"]
+
+[ext_resource type="Texture2D" uid="uid://bpbsxtwtecuj5" path="res://icon.svg" id="1_x36ny"]
+
+[sub_resource type="GDScript" id="GDScript_x36ny"]
+script/source = "extends Sprite2D
+
+var _time: float = 0.0
+@onready var _init_position: Vector2 = global_position
+
+func _process(delta: float) -> void:
+	_time += delta
+	global_position.x = _init_position.x + ( sin(_time * 3.0) * 200.0 )
+"
+
+[node name="2DLevel" type="Node2D" unique_id=80928347]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=79798200]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1778959802]
+position = Vector2(-13, -3)
+scale = Vector2(2.0161555, 2.0161555)
+texture = ExtResource("1_x36ny")
+script = SubResource("GDScript_x36ny")
