@@ -40,7 +40,8 @@ render_target_update_mode = 4
 [node name="2DLevel" parent="SubViewport" unique_id=80928347 instance=ExtResource("1_u52ul")]
 
 [node name="Screen" type="Sprite3D" parent="." unique_id=848006215 groups=["screen"]]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -0.44807357, 0.8939967, 0, -0.8939967, -0.44807357, 0, 0, 1.3333334)
+pixel_size = 0.014209759
 texture = SubResource("ViewportTexture_0b4ue")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1121212817]
@@ -49,7 +50,7 @@ size = Vector3(123.56445, 1, 111.96973)
 material = ExtResource("2_vonw3")
 
 [node name="EnvironmentCamera3D" type="Camera3D" parent="." unique_id=819086424]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.34974098, 3.4623308, -0.015739918)
+transform = Transform3D(1, 0, 0, 0, -0.44807363, 0.89399666, 0, -0.89399666, -0.44807363, 0, 10, 1.3333334)
 current = true
 size = 0.15
 script = ExtResource("3_oi3di")

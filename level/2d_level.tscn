@@ -68,7 +68,7 @@ libraries/ = SubResource("AnimationLibrary_a8b5g")
 autoplay = &"loop"
 
 [node name="Icon2" type="Sprite2D" parent="Camera2D" unique_id=555559985]
-modulate = Color(1, 1, 1, 0.30588236)
+modulate = Color(1, 1, 1, 0.6039216)
 z_index = -3
 position = Vector2(-2.0000267, 3.9999943)
 scale = Vector2(15.593747, 9.213578)
